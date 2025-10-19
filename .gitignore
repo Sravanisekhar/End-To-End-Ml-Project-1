@@ -20,14 +20,16 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
 # PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -83,10 +85,21 @@ ipython_config.py
 .python-version
 
 # pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
 #Pipfile.lock
 
-# poetry
-poetry.lock
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
 
 # Environments
 .env
@@ -114,34 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-# VS Code
-.vscode/
-
-# Data / Models / Artifacts
-*.h5
-*.pkl
-*.joblib
-*.ckpt
-*.pt
-*.onnx
-*.csv
-*.tsv
-*.json
-*.yaml
-*.yml
-
-# Datasets (optional — uncomment if you don’t want to push raw data)
-# data/
-# datasets/
-# raw_data/
-
-# Logs and temp files
-*.log
-logs/
-temp/
-tmp/
-
-# System files
-.DS_Store
-Thumbs.db
